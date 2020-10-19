@@ -44,11 +44,6 @@ def translate(text, lang):
     result = translator.translate(text, dest = str(lang))
     return result.text
 
-def input(text):
-    exec(ReadFF("lib/catapi-io.py"))
-    message(str(text))
-    edit("stage", "wait:" + identificator)
-
 def RandomInt(first, second):
     return randd.randint(first, second)
 
