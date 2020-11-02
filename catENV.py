@@ -94,7 +94,7 @@ def Download(url, fn):
         f.write(get(url).content)
 
 def Similar(first, second):
-    """imilar strings"""
+    """Similar strings"""
     if not len(first) == len(second):
         return False
     if len(first) - sum(l1==l2 for l1, l2 in zip(first, second)) > 3:
