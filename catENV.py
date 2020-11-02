@@ -1,9 +1,9 @@
 
-#
-# catENV Defintions: HostToIp, percent, deunix, Geocode, translate, input, RandomInt, PlusWrite, Get, ShortUrl, InstallPackage, ReadFF, CallSystem, Run,
-# Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
-# ВНИМАНИЕ. код не тестировался потому что мне лень
-#
+"""
+catENV Defintions: HostToIp, percent, deunix, Geocode, translate, input, RandomInt, PlusWrite, Get, ShortUrl, InstallPackage, ReadFF, CallSystem, Run,
+Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
+ВНИМАНИЕ. код не тестировался потому что мне лень
+"""
 
 import os
 import datetime
