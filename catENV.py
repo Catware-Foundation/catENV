@@ -55,7 +55,6 @@ def Get(url):
     """A get requests"""
     try:
         return get(url).text
-        log("Issued Get() with URL {}".format(url))
     except Exception as e:
         log("Error in Get(). " + str(e))
         return None
