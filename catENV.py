@@ -6,11 +6,11 @@ Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
 """
 
 import os
+import warnings
 import datetime
 import shutil
 from PIL import Image, ImageDraw, ImageFont
-import random as randd
-from random import random
+import random
 import requests
 from requests import get, post, Session
 import time
@@ -46,7 +46,7 @@ def translate(text, lang):
     return result.text
 
 def RandomInt(first, second):
-    return randd.randint(first, second)
+    return random.randint(first, second)
 
 def PlusWrite(text, target):
     file = open(str(target), 'a', encoding='utf-8')
@@ -110,16 +110,14 @@ def TextFromBits(bits, encoding='utf-8', errors='surrogatepass'): # Text from 10
         return 'error'
 
 def CreateFile(name): # Create a file
-    k = name
-    f = open(str(k), 'w')
-    f.close()
+    open(name, "a").close()
 
 def Reverse(s): # Reverse text (Text -> txeT)
     return s[::-1]
 
 def RandomLetter():
     letters = ['q', 'Q', 'w', 'W', 'e', 'E', 'r', 'R', 't', 'T', 'y', 'Y', 'u', 'U', 'i', 'I', 'o', 'O', 'p', 'P', 'a', 'A', 's', 'S', 'd', 'D', 'f', 'F', 'g', 'G', 'h', 'H', 'j', 'J', 'k', 'K', 'l', 'L', 'z', 'Z', 'x', 'X', 'c', 'C', 'v', 'V', 'b', 'B', 'n', 'N', 'm', 'M', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-    return randd.choice(letters)
+    return random.choice(letters)
 
 def writeTo(text, target):
     file = open(str(target), 'w', encoding='utf-8')
