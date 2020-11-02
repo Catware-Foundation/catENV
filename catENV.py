@@ -91,7 +91,8 @@ def ReadFF(file):
         return None
 
 
-def CallSystem(command): # Call system shell
+def CallSystem(command):
+    """Call system shell"""
     return str(check_output(str(command), shell=False))
 
 
