@@ -1,4 +1,3 @@
-
 """
 catENV Defintions: HostToIp, percent, deunix, Geocode, translate, input, RandomInt, PlusWrite, Get, ShortUrl, InstallPackage, ReadFF, CallSystem, Run,
 Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
@@ -36,7 +35,7 @@ def deunix(integer):
 
 def Geocode(address):
     address = address.replace(" ", "+")
-    json1 = convertjson(Get("https://nominatim.openstreetmap.org/search?q="+ address + "&format=geojson"))
+    json1 = convertjson(Get("https://nominatim.openstreetmap.org/search?q=" + address + "&format=geojson"))
     json2 = json1["features"][0]["geometry"]["coordinates"]
     f1 = json2[0]
     f2 = json2[1]
@@ -47,7 +46,7 @@ def Geocode(address):
 
 
 def translate(text, lang):
-    result = translator.translate(text, dest = str(lang))
+    result = translator.translate(text, dest=str(lang))
     return result.text
 
 
@@ -111,7 +110,7 @@ def Similar(first, second):
     """Similar strings"""
     if not len(first) == len(second):
         return False
-    if len(first) - sum(l1==l2 for l1, l2 in zip(first, second)) > 3:
+    if len(first) - sum(l1 == l2 for l1, l2 in zip(first, second)) > 3:
         return False
     return True
 
