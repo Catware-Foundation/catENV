@@ -13,9 +13,9 @@ import string
 import requests
 from PIL import Image
 from requests import get
+from googletrans import Translator
 
 session = requests.Session()
-from googletrans import Translator
 translator = Translator()
 
 def HostToIp(host):
