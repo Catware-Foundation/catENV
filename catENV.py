@@ -49,9 +49,8 @@ def RandomInt(first, second):
     return random.randint(first, second)
 
 def PlusWrite(text, target):
-    file = open(str(target), 'a', encoding='utf-8')
-    file.write(str(text))
-    file.close()
+    with open(str(target), 'a', encoding='utf-8') as file:
+        file.write(str(text))
 
 def Get(url):
     """A get requests"""
@@ -76,9 +75,8 @@ def InstallPackage(text):
 def ReadFF(file):
     """Read From File"""
     try:
-        Ff = open(file, 'r', encoding='UTF-8')
-        Contents = Ff.read()
-        Ff.close()
+        with open(file, 'r', encoding='UTF-8') as file:
+            Contents = file.read()
         return Contents
     except:
         return None
@@ -92,9 +90,8 @@ def Run(file):
 
 def Download(url, fn):
     """Download a file from any URL"""
-    f = open(fn, 'wb')
-    f.write(get(url).content)
-    f.close()
+    with open(fn, 'wb') as f:
+        f.write(get(url).content)
 
 def Similar(first, second):
     """imilar strings"""
@@ -131,9 +128,8 @@ def RandomLetter():
     return random.choice(letters)
 
 def writeTo(text, target):
-    file = open(str(target), 'w', encoding='utf-8')
-    file.write(str(text))
-    file.close()
+    with open(str(target), 'w', encoding='utf-8') as file:
+        file.write(str(text))
 
 def resize_image(input_image_path, output_image_path, size):
     try:
