@@ -53,7 +53,8 @@ def PlusWrite(text, target):
     file.write(str(text))
     file.close()
 
-def Get(url): # A get requests
+def Get(url):
+    """A get requests"""
     try:
         return get(url).text
         log("Issued Get() with URL {}".format(url))
@@ -64,14 +65,16 @@ def Get(url): # A get requests
 def ShortUrl(url):
     return Get("https://clck.ru/--?url=" + url)
 
-def InstallPackage(text): # Install Python Package (PIP)
+def InstallPackage(text):
+    """Install Python Package (PIP)"""
     a = CallSystem("pip install " + str(text) + ' --user')
     if 'error' not in str(a).lower():
         return 'success'
     else:
         return 'error'
 
-def ReadFF(file): # Read From File
+def ReadFF(file):
+    """Read From File"""
     try:
         Ff = open(file, 'r', encoding='UTF-8')
         Contents = Ff.read()
@@ -83,36 +86,43 @@ def ReadFF(file): # Read From File
 def CallSystem(command): # Call system shell
     return str(check_output(str(command), shell=False))
 
-def Run(file): # Запустить питоновский скрипт в рамках DEFa (а нахуя это кстати я не знаю.)
+def Run(file):
+    """Запустить питоновский скрипт в рамках DEFa (а нахуя это кстати я не знаю.)"""
     exec(ReadFF(str(file)))
 
-def Download(url, fn): # Download a file from any URL
+def Download(url, fn):
+    """Download a file from any URL"""
     f = open(fn, 'wb')
     f.write(get(url).content)
     f.close()
 
-def Similar(first, second): # Similar strings
+def Similar(first, second):
+    """imilar strings"""
     if not len(first) == len(second):
         return False
     if len(first) - sum(l1==l2 for l1, l2 in zip(first, second)) > 3:
         return False
     return True
 
-def TextToBits(text, encoding='utf-8', errors='surrogatepass'): # Text to 101010010100101
+def TextToBits(text, encoding='utf-8', errors='surrogatepass'):
+    """Text to 101010010100101"""
     bits = bin(int.from_bytes(text.encode(encoding, errors), 'big'))[2:]
     return bits.zfill(8 * ((len(bits) + 7) // 8))
 
-def TextFromBits(bits, encoding='utf-8', errors='surrogatepass'): # Text from 10101001010101
+def TextFromBits(bits, encoding='utf-8', errors='surrogatepass'):
+    """Text from 10101001010101"""
     try:
         n = int(bits, 2)
         return n.to_bytes((n.bit_length() + 7) // 8, 'big').decode(encoding, errors) or '\0'
     except Exception:
         return 'error'
 
-def CreateFile(name): # Create a file
+def CreateFile(name):
+    """Create a file"""
     open(name, "a").close()
 
-def Reverse(s): # Reverse text (Text -> txeT)
+def Reverse(s):
+    """Reverse text (Text -> txeT)"""
     warnings.warn("Use built-in function reversed instead", category=DeprecationWarning)
     return reversed(s)
 
