@@ -3,6 +3,7 @@ catENV Defintions: HostToIp, percent, deunix, Geocode, translate, input, RandomI
 Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
 ВНИМАНИЕ. код не тестировался потому что мне лень
 TODO:переименовать функции в lowercase (нарушит совместимость)
+TODO:разобраться с типами (нарушит совместимость)
 """
 
 import datetime
