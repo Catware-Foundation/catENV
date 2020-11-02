@@ -5,17 +5,16 @@ Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
 ВНИМАНИЕ. код не тестировался потому что мне лень
 """
 
-import os
-import warnings
 import datetime
-import shutil
-from PIL import Image, ImageDraw, ImageFont
 import random
+import warnings
+import string
+
 import requests
-from requests import get, post, Session
-import time
+from PIL import Image
+from requests import get
+
 session = requests.Session()
-import sys
 from googletrans import Translator
 translator = Translator()
 
