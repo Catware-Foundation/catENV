@@ -18,16 +18,20 @@ from googletrans import Translator
 session = requests.Session()
 translator = Translator()
 
+
 def HostToIp(host):
     return gethostbyname(host)
+
 
 def percent(frst, scnd):
     coef = 100 / frst
     gets = scnd * coef
     return gets
 
+
 def deunix(integer):
     return datetime.datetime.utcfromtimestamp(integer).strftime('%Y %m %d %H %M %S').split(" ")
+
 
 def Geocode(address):
     address = address.replace(" ", "+")
@@ -40,16 +44,20 @@ def Geocode(address):
     json2.append(json3)
     return json2
 
+
 def translate(text, lang):
     result = translator.translate(text, dest = str(lang))
     return result.text
 
+
 def RandomInt(first, second):
     return random.randint(first, second)
+
 
 def PlusWrite(text, target):
     with open(str(target), 'a', encoding='utf-8') as file:
         file.write(str(text))
+
 
 def Get(url):
     """A get requests"""
@@ -59,8 +67,10 @@ def Get(url):
         log("Error in Get(). " + str(e))
         return None
 
+
 def ShortUrl(url):
     return Get("https://clck.ru/--?url=" + url)
+
 
 def InstallPackage(text):
     """Install Python Package (PIP)"""
@@ -69,6 +79,7 @@ def InstallPackage(text):
         return 'success'
     else:
         return 'error'
+
 
 def ReadFF(file):
     """Read From File"""
@@ -79,17 +90,21 @@ def ReadFF(file):
     except:
         return None
 
+
 def CallSystem(command): # Call system shell
     return str(check_output(str(command), shell=False))
+
 
 def Run(file):
     """Запустить питоновский скрипт в рамках DEFa (а нахуя это кстати я не знаю.)"""
     exec(ReadFF(str(file)))
 
+
 def Download(url, fn):
     """Download a file from any URL"""
     with open(fn, 'wb') as f:
         f.write(get(url).content)
+
 
 def Similar(first, second):
     """Similar strings"""
@@ -99,10 +114,12 @@ def Similar(first, second):
         return False
     return True
 
+
 def TextToBits(text, encoding='utf-8', errors='surrogatepass'):
     """Text to 101010010100101"""
     bits = bin(int.from_bytes(text.encode(encoding, errors), 'big'))[2:]
     return bits.zfill(8 * ((len(bits) + 7) // 8))
+
 
 def TextFromBits(bits, encoding='utf-8', errors='surrogatepass'):
     """Text from 10101001010101"""
@@ -112,23 +129,28 @@ def TextFromBits(bits, encoding='utf-8', errors='surrogatepass'):
     except Exception:
         return 'error'
 
+
 def CreateFile(name):
     """Create a file"""
     open(name, "a").close()
+
 
 def Reverse(s):
     """Reverse text (Text -> txeT)"""
     warnings.warn("Use built-in function reversed instead", category=DeprecationWarning)
     return reversed(s)
 
+
 def RandomLetter():
     # может всё таки выкинуть это к х.ям, и генерировать сразу строку?
     letters = string.ascii_letters + string.digits
     return random.choice(letters)
 
+
 def writeTo(text, target):
     with open(str(target), 'w', encoding='utf-8') as file:
         file.write(str(text))
+
 
 def resize_image(input_image_path, output_image_path, size):
     try:
