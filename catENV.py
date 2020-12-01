@@ -1,8 +1,14 @@
 
 #
 # catENV Defintions: HostToIp, percent, deunix, Geocode, translate, input, RandomInt, PlusWrite, Get, ShortUrl, InstallPackage, ReadFF, CallSystem, Run,
-# Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image
+# Download, Similar, CreateFile, Reverse, RandomLetter, writeTo, resize_image, convertint
 # ВНИМАНИЕ. код не тестировался потому что мне лень
+#
+
+#
+# Contributors:
+#
+# Catinka (convertint) - визитная карточка https://vk.com/catinkastep
 #
 
 import os
@@ -18,6 +24,15 @@ session = requests.Session()
 import sys
 from googletrans import Translator
 translator = Translator()
+
+def convertint(uptime): # Converting seconds to verbal notation, by Catware & Catinka
+    seconds = int(uptime);
+    minutes = int(uptime / 60);
+    hours = int(minutes / 60);
+    days = int(hours / 24);
+    hours = int(hours - days * 24);
+    minutes = int(minutes - (hours * 60 + days * 24 * 60));
+    return str(days) + ' дней ' + str(hours) + ' часов ' + str(minutes) + ' минут ' 
 
 def HostToIp(host):
     return gethostbyname(host)
