@@ -43,7 +43,7 @@ def percent(frst, scnd):
     return gets
 
 def deunix(integer):
-    return datetime.datetime.utcfromtimestamp(integer).strftime('%Y %m %d %H %M %S').split(" ")
+    return datetime.datetime.fromtimestamp(integer).strftime('%Y %m %d %H %M %S').split(" ")
 
 def Geocode(address):
     address = address.replace(" ", "+")
